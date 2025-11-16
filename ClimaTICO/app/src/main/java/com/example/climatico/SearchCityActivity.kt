@@ -32,8 +32,10 @@ class SearchCityActivity : AppCompatActivity(), View.OnClickListener {
         when(v.id){
             binding.btSearch.id -> {
                 val cityName = binding.etNomeCidade.text.toString()
-
+                val bundle = Bundle()
+                bundle.putString("cityName", cityName)
                 val intent = Intent(this, RelatoryActivity::class.java)
+                intent.putExtras(bundle)
                 startActivity(intent)
             }
         }

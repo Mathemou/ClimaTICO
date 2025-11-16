@@ -8,7 +8,7 @@
     tools:context=".RelatoryActivity">
 
     <TextView
-        android:id="@+id/tv_nome"
+        android:id="@+id/tv_nome_da_cidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -17,16 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_sigla_estado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/iv_sigla_estado"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="50dp"
-        android:text="XX"
+        android:src="@drawable/placeholder"
         android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nome" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nome_da_cidade" />
 
     <TextView
         android:id="@+id/tv_temperatura_e_aparencia"
@@ -36,7 +36,7 @@
         android:text="XXCº, aparencia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sigla_estado" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_sigla_estado" />
 
     <TextView
         android:id="@+id/tv_temperatura_maxima"
