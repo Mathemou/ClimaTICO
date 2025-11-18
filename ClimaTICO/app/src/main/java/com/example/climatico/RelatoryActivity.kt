@@ -2,6 +2,7 @@ package com.example.climatico
 
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -16,28 +17,40 @@ import com.example.climatico.model.WeatherResponse
 import com.example.climatico.repository.WeatherRepository
 import com.example.climatico.viewmodel.RelatoryViewModel
 import com.example.climatico.viewmodel.RelatoryViewModelFactory
+import com.google.android.material.appbar.MaterialToolbar
+
 
 class RelatoryActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding : ActivityRelatoryBinding
-
     private lateinit var cityName : String
-
     private lateinit var relatoryViewModel : RelatoryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_relatory)
+
+        // Carrega o layout APENAS com binding
+        binding = ActivityRelatoryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Ajuste de insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding = ActivityRelatoryBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
+        // Configurar a toolbar do binding
+        setSupportActionBar(binding.toolbar)
+
+        // Ativar botão de voltar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // Resto do código
         cityName = Utils.capitalizeFirstLetter(intent.getStringExtra("cityName")!!)
         binding.tvNomeDaCidade.text = cityName
+
         val repository = WeatherRepository(RetrofitClient.instance)
         val factory = RelatoryViewModelFactory(repository)
 
@@ -78,6 +91,16 @@ class RelatoryActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         when(v.id){
 
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

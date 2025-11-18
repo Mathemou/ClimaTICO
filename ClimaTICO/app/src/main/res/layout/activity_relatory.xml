@@ -8,6 +8,17 @@
     tools:context=".RelatoryActivity"
     android:background="@color/blue">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="ClimaTICO"
+        app:titleTextColor="@android:color/white" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_conteudo"
         android:layout_width="match_parent"
