@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:textSize="30sp"
-            android:text="Nome da cidade"
+            android:text="@string/nome_da_cidade"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -66,7 +66,7 @@
                 android:id="@+id/tv_temperatura_e_aparencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XXCº, aparencia"
+                android:text="@string/xxc_aparencia"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_gravity="center"
@@ -82,7 +82,7 @@
                 android:id="@+id/tv_temperatura_maxima"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temperatura máxima: XX ºC"
+                android:text="@string/temperatura_m_xima_xx_c"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_temperatura_e_aparencia" />
@@ -91,7 +91,7 @@
                 android:id="@+id/tv_temperatura_minima"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temperatura mínima: XX ºC"
+                android:text="@string/temperatura_m_nima_xx_c"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_temperatura_maxima" />
@@ -100,7 +100,7 @@
                 android:id="@+id/tv_sensacao_termica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sensação térmica: XX ºC"
+                android:text="@string/sensa_o_t_rmica_xx_c"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_temperatura_minima" />
@@ -109,7 +109,7 @@
                 android:id="@+id/tv_velocidade_vento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Velocidade do vento: XX km/h"
+                android:text="@string/velocidade_do_vento_xx_km_h"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_sensacao_termica" />
@@ -118,7 +118,7 @@
                 android:id="@+id/tv_humidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Umidade: XX%"
+                android:text="@string/umidade_xx"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_velocidade_vento" />

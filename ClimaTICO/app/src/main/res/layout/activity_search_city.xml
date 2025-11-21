@@ -34,10 +34,13 @@
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <!-- Linha esquerda -->
             <View
                 android:id="@+id/line_left"
                 android:layout_width="0dp"
@@ -49,22 +52,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/textView" />
 
-            <!-- Texto central -->
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:textColor="@color/light_grey"
                 android:paddingHorizontal="8dp"
-                android:text="Busque pela cidade"
+                android:text="@string/busque_pela_cidade"
+                android:textColor="@color/light_grey"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/line_right"
                 app:layout_constraintStart_toEndOf="@id/line_left"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Linha direita -->
             <View
                 android:id="@+id/line_right"
                 android:layout_width="0dp"
@@ -79,12 +80,11 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <!-- 🌟 TextInputLayout -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_nome_cidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome da cidade"
+            android:hint="@string/nome_da_cidade"
             app:boxStrokeColor="@android:color/black"
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/black"
@@ -103,14 +103,13 @@
                 android:textColor="@android:color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- 🌟 Botão -->
         <Button
             android:id="@+id/bt_search"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:backgroundTint="@color/blue"
             android:fontFamily="sans-serif-medium"
-            android:text="Buscar Previsão"
+            android:text="@string/buscar_previs_o"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"

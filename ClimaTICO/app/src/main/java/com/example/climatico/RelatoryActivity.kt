@@ -30,24 +30,19 @@ class RelatoryActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // Carrega o layout APENAS com binding
         binding = ActivityRelatoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Ajuste de insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Configurar a toolbar do binding
         setSupportActionBar(binding.toolbar)
 
-        // Ativar botão de voltar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // Resto do código
         cityName = Utils.capitalizeFirstLetter(intent.getStringExtra("cityName")!!)
         binding.tvNomeDaCidade.text = cityName
 
